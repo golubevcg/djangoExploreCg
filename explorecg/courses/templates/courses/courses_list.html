@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Explore CG Courses</title>
-</head>
-<body>
+{% extends 'courses/base.html' %}
+
+{% block container %}
     <ul>
-    {%  for article in articles %}
-        <li>{{ article.body }}</li>
-    {% endfor %}
+        {%  for article in articles %}
+            <li>{{ forloop.counter }}
+                <a href="{% url 'courses:course_detail' article.pk %}">{{ article.header }}</a>
+            </li>
+        {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock %}

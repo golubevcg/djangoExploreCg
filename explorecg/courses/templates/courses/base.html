@@ -1,0 +1,29 @@
+{% extends 'root.html' %}
+
+
+{%  block page_title %}
+    Posting
+{% endblock %}
+
+{%  block main_container %}
+    <body>
+        <div class="menu">
+            <ul>
+                <li>
+                    <a href=" {% url 'courses:index' %}">main</a>
+                </li>
+                <li>
+                    <a href="{% url 'courses:users' %}">users</a>
+                </li>
+                <li>
+                    <a href="{% url 'courses:about' %}">about</a>
+                </li>
+            </ul>
+        </div>
+        {% block container %}
+        {% endblock %}
+    </body>
+
+{% endblock %}
+
+</html>

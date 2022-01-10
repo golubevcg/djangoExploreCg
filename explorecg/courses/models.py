@@ -13,6 +13,9 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return f'Article({self.id}, {self.header})'
+
 
 class Comment(models.Model):
     user = models.ForeignKey(get_user_model(), on_delete=models.PROTECT)
